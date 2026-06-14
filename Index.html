@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <center>
+    <title>UNIDADES DE CONSERVAÇÃO</title>
+    <style>
+        /* CSS Consolidado */
+        body { font-family: system-ui, sans-serif; margin: 0; padding: 20px; background: #f4f6f8; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; display: grid; gap: 30px; }
+        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        
+        /* Formulário */
+        form { display: flex; flex-direction: column; gap: 15px; }
+        input, select, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
+        button { padding: 12px; background: #2c3e50; color: white; border: none; cursor: pointer; border-radius: 6px; font-weight: bold; }
+        button:hover { background: #1a252f; }
+        
+        /* Grid de Unidades */
+        #grid-unidades { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .uc-card { background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; }
+        .uc-card h3 { margin-top: 0; color: #2980b9; }
+        .uc-meta { font-size: 0.9em; color: #555; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>UNIDADES DE CONSERVAÇÃO</h1>
+
+        <div class="card">
+            <h2>Postar Nova Comunicação</h2>
+            <form id="form-comunicacao">
+                <select id="unidade_id" required>
+                    <option value="">Selecione a Unidade de Conservação...</option>
+                    </select>
+                <input type="text" id="titulo" placeholder="Título da comunicação" required>
+                <input type="email" id="email" placeholder="Seu E-mail" required>
+                <textarea id="descricao" placeholder="Descrição detalhada..." rows="4" required></textarea>
+                <button type="submit">Enviar Relato</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Unidades Cadastradas</h2>
+            <div id="grid-unidades">
+                <p id="msg-carregando"></p>
+
+            </div>
+        </div>
+    </div>
+</center>
+   <script src="app.js"></script>
+</body>
+</html>
+
